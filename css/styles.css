@@ -35,6 +35,7 @@ body {
 
 .list {
   list-style: none;
+  margin: 0;
 }
 .link {
   text-decoration: none;
@@ -242,28 +243,35 @@ body {
 .projects-list {
   display: flex;
 }
-.projects-item:not(:last-child) {
-  margin-right: 30px;
-}
 .projects-thumb {
   position: relative;
 }
+.projects-thumb img {
+  display: block;
+}
+.projects-item:not(:last-child) {
+  margin-right: 30px;
+}
 .projects-name {
   position: absolute;
-  left: 0;
   bottom: 0;
+  left: 0;
 
-  display: inline-block;
   width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  background: rgba(47, 48, 58, 0.8);
+}
+.projects-name > p {
+  margin: 0;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.143;
-  text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  padding: 27px 82px;
-  background: rgba(47, 48, 58, 0.8);
 
   color: var(--primary-white-color);
 }
@@ -432,6 +440,8 @@ footer {
 }
 .footer-div .social-item {
   --color4: var(--primary-white-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
 }
 /* =====BUTTON===== */
 .btn {
@@ -587,6 +597,8 @@ footer {
   justify-content: center;
   align-items: center;
   min-height: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .modal {
   min-height: 581px;
@@ -603,6 +615,7 @@ footer {
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
 }
 .backdrop.is-hidden .modal {
   transform: scale(1.1);
@@ -614,6 +627,9 @@ footer {
 
   width: 30px;
   height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--primary-white-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
